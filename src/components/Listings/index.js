@@ -22,7 +22,7 @@ const Listings = (props) => {
             Listings
             <ul>
                 {sortedJobs.map(job => {
-                    return <Listing key={job.id} details={job} />
+                    return <Listing key={job.id} details={job} addPillToFilters={props.addPillToFilters} />
                 })}
             </ul>
         </div>

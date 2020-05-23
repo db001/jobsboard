@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Pill from '../Pill';
 
 export class Listing extends Component {
     render() {
@@ -29,8 +30,8 @@ export class Listing extends Component {
                     </div>
                 </div>
                 <ul className="pillsContainer">
-                    {pillsArray.map(pill => {
-                        return <li>{pill}</li>
+                    {pillsArray.map((pill, index) => {
+                        return <Pill key={index} text={pill} addPillToFilters={this.props.addPillToFilters} />
                     })}
                 </ul>
             </div>
