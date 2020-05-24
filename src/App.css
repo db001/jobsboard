@@ -9,5 +9,12 @@
 }
 
 body {
+    background: hsl(180, 52%, 96%);
     font-family: "Spartan", sans-serif;
+}
+
+.contentWrapper {
+    max-width: 1048px;
+    width: 100%;
+    margin: 0 auto;
 }

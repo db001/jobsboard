@@ -1,5 +1,6 @@
 import React from 'react';
 import Listing from '../Listing';
+import './style.css';
 
 const Listings = (props) => {
 
@@ -18,7 +19,7 @@ const Listings = (props) => {
     const sortedJobs = [...featuredJobs, ...notFeaturedJobs]
 
     return (
-        <div>
+        <div className="listingsWrapper">
             Listings
             <ul>
                 {sortedJobs.map(job => {

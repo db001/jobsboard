@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Pill from '../Pill';
+import './style.css';
 
 export class Listing extends Component {
     render() {
@@ -8,7 +9,7 @@ export class Listing extends Component {
         const pillsArray = [role, level, ...languages, ...tools]
 
         return (
-            <div>
+            <div className="listing">
                 <div className="jobDetails">
                     <div className="listingImage">
                         <img alt="Company Logo" src={logo} />

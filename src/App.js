@@ -26,8 +26,10 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <Filters filters={this.state.filters} />
-        <Listings jobs={this.state.jobs} filters={this.state.filters} addPillToFilters={this.addPillToFilters} />
+        <div className="contentWrapper">
+          <Filters filters={this.state.filters} />
+          <Listings jobs={this.state.jobs} filters={this.state.filters} addPillToFilters={this.addPillToFilters} />
+        </div>
       </div>
     )
 

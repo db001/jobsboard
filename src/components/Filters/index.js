@@ -1,12 +1,12 @@
 import React from 'react';
-import Pill from '../Pill';
+import FilterPill from '../FilterPill';
 
 const Filters = (props) => {
 
     return (
         <ul>
             {props.filters.map(filter => {
-                return <Pill text={filter} />
+                return <FilterPill text={filter} />
             })}
         </ul>
     )

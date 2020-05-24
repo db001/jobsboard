@@ -1,0 +1,11 @@
+.listing {
+    align-items: center;
+    background: hsl(255, 0%, 100%);
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.jobDetails {
+    align-items: center;
+    display: flex;
+}
