@@ -3,31 +3,22 @@ import Listing from '../Listing';
 import './style.css';
 
 const Listings = (props) => {
-
-    let featuredJobs = [];
-    let notFeaturedJobs = [];
-
-    props.jobs.map(job => {
-        if (job.featured) {
-            featuredJobs.push(job);
-        } else {
-            notFeaturedJobs.push(job);
-        }
-        return null;
-    });
-
-    const sortedJobs = [...featuredJobs, ...notFeaturedJobs]
-
-    return (
-        <div className="listingsWrapper">
-            Listings
-            <ul>
-                {sortedJobs.map(job => {
-                    return <Listing key={job.id} details={job} addPillToFilters={props.addPillToFilters} />
-                })}
-            </ul>
-        </div>
-    )
+    if (props.jobs.length === 0) {
+        return <div className="noResults">Sorry, no job listings match your filters</div>
+    } else {
+        return (
+            <div className="listingsWrapper" >
+                Listings
+                < ul >
+                    {
+                        props.jobs.map(job => {
+                            return <Listing key={job.id} details={job} addPillToFilters={props.addPillToFilters} />
+                        })
+                    }
+                </ul >
+            </div >
+        )
+    }
 }
 
 export default Listings;

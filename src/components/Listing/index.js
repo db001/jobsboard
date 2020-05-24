@@ -6,19 +6,19 @@ export class Listing extends Component {
     render() {
         const { company, contract, featured, languages, level, location, logo, newJob, position, postedAt, role, tools } = this.props.details;
 
-        const pillsArray = [role, level, ...languages, ...tools]
+        const pillsArray = [role, level, ...languages, ...tools];
 
         return (
-            <div className="listing">
+            <div className={`listing ${featured ? "featuredListing" : ""}`}>
                 <div className="jobDetails">
                     <div className="listingImage">
                         <img alt="Company Logo" src={logo} />
                     </div>
                     <div className="detailsContainer">
                         <div className="detailPrefix">
-                            <span>{company}</span>
-                            {newJob ? <span>New</span> : ''}
-                            {featured ? <span>Featured</span> : ''}
+                            <span className="companyName">{company}</span>
+                            {newJob ? <span className="flash newFlash">New!</span> : ''}
+                            {featured ? <span className="flash featuredFlash">Featured</span> : ''}
                         </div>
                         <div className="jobTitle">
                             <h3>{position}</h3>

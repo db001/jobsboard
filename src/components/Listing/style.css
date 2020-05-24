@@ -1,11 +1,92 @@
 .listing {
     align-items: center;
     background: hsl(255, 0%, 100%);
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 2px hsl(180, 29%, 80%);
     display: flex;
+    height: 100px;
     margin-bottom: 16px;
+    padding: 16px;
+}
+
+.listing.featuredListing {
+    border-left: 5px solid hsl(180, 29%, 50%);
 }
 
 .jobDetails {
     align-items: center;
     display: flex;
+    height: 100%;
+}
+
+.listingImage {
+    margin-right: 16px;
+}
+
+.detailsContainer {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.companyName {
+    color: hsl(180, 29%, 50%);
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.flash {
+    border-radius: 12px;
+    color: hsl(255, 0%, 100%);
+    font-size: 10px;
+    font-weight: 700;
+    margin-right: 8px;
+    padding: 5px 6px 4px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.newFlash {
+    background-color: hsl(180, 29%, 50%);
+}
+
+.featuredFlash {
+    background-color: hsl(180, 14%, 20%);
+}
+
+.jobTitle {
+    color: hsl(180, 29%, 50%);
+    font-size: 15px;
+}
+
+.detailsSuffix {
+    color: hsl(180, 8%, 52%);
+    font-size: 12px;
+}
+
+.detailsSuffix span {
+    padding: 0 8px;
+}
+
+.detailsSuffix span:first-child {
+    padding-left: 0;
+}
+
+.detailsSuffix span:after {
+    content: "•";
+    position: relative;
+    left: 8px;
+}
+.detailsSuffix span:last-child:after {
+    content: "";
+}
+
+.pillsContainer {
+    margin-left: auto;
+}
+
+.pillsContainer li {
+    display: inline-block;
 }

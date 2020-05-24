@@ -1,0 +1,19 @@
+.pill {
+    background-color: hsl(180, 31%, 95%);
+    border-radius: 5px;
+    color: hsl(180, 29%, 50%);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 8px;
+    padding: 8px;
+}
+
+.pill:last-child {
+    margin-right: 0;
+}
+
+.pill:hover {
+    background-color: hsl(180, 29%, 50%);
+    color: hsl(255, 0%, 100%);
+}
