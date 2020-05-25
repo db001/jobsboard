@@ -1,0 +1,32 @@
+.filterWrapper {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1048px;
+    padding: 16px;
+    width: 100%;
+    position: absolute;
+    top: 128px;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.filterWrapper ul {
+    display: flex;
+}
+
+.clearButton {
+    color: hsl(180, 29%, 50%);
+    cursor: pointer;
+    font-family: "Spartan", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: auto;
+}
+
+.clearButton:hover {
+    text-decoration: underline;
+}

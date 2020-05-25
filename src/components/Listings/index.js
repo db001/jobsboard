@@ -8,15 +8,14 @@ const Listings = (props) => {
     } else {
         return (
             <div className="listingsWrapper" >
-                Listings
-                < ul >
+                <ul>
                     {
                         props.jobs.map(job => {
                             return <Listing key={job.id} details={job} addPillToFilters={props.addPillToFilters} />
                         })
                     }
-                </ul >
-            </div >
+                </ul>
+            </div>
         )
     }
 }

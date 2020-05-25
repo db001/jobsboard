@@ -27,10 +27,26 @@ export class App extends React.Component {
       this.setState({
         filters: [...this.state.filters, pillName]
       }, () => {
-        console.log(this.state.filters);
         this.filterJobs(this.state.jobs, this.state.filters);
       });
     }
+  }
+
+  removeFilter = filterName => {
+    const newFilters = this.state.filters.filter(text => text !== filterName);
+    this.setState({
+      filters: newFilters
+    }, () => {
+      this.filterJobs(data, this.state.filters);
+    });
+  }
+
+  clearFilters = () => {
+    this.setState({
+      filters: []
+    }, () => {
+      this.filterJobs(data, this.state.filters);
+    })
   }
 
   sortFeaturedJobs = array => {
@@ -52,14 +68,15 @@ export class App extends React.Component {
 
   filterJobs = (jobsArr, filtersArr) => {
     if (filtersArr.length === 0) {
+      this.setState({
+        jobs: jobsArr
+      });
       return jobsArr;
     }
 
     const filteredList = jobsArr.filter(listing => {
-      return filtersArr.indexOf(listing.role) !== -1 ||
-        filtersArr.indexOf(listing.level) !== -1 ||
-        listing.languages.some(language => this.state.filters.includes(language)) ||
-        listing.tools.some(tool => this.state.filters.includes(tool))
+      const arrayOfAttributes = [listing.role, listing.level, ...listing.languages, ...listing.tools];
+      return filtersArr.every(attribute => arrayOfAttributes.indexOf(attribute) !== -1);
     });
 
     this.setState({
@@ -71,9 +88,10 @@ export class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="appWrapper">
+        <div className="topBanner"></div>
         <div className="contentWrapper">
-          <Filters filters={this.state.filters} />
+          <Filters filters={this.state.filters} removeFilter={this.removeFilter} clearFilters={this.clearFilters} />
           <Listings jobs={this.state.jobs} addPillToFilters={this.addPillToFilters} />
         </div>
       </div>

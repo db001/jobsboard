@@ -13,6 +13,16 @@ body {
     font-family: "Spartan", sans-serif;
 }
 
+.appWrapper {
+    position: relative;
+}
+
+.topBanner {
+    background-image: url("./images/bg-header-desktop.svg");
+    height: 128px;
+    width: 100%;
+}
+
 .contentWrapper {
     max-width: 1048px;
     width: 100%;
